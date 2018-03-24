@@ -12,7 +12,8 @@ namespace Vidly
             routes.MapRoute(
                 "MoviesByReleaseDate", // name of route
                 "movies/released/{year}/{month}", // url pattern
-                new {controller = "Movies", action = "ByReleaseDate"} // anonymous object used for default
+                new {controller = "Movies", action = "ByReleaseDate"}, // anonymous object used for default
+                new {year = @"\d{4}", month = @"\d{2}" // anon object for setting constraints on url params
             );
 
             routes.MapRoute(
