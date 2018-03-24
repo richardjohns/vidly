@@ -9,18 +9,21 @@ namespace Vidly
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                "MoviesByReleaseDate", // name of route
-                "movies/released/{year}/{month}", // url pattern
-                new {controller = "Movies", action = "ByReleaseDate"}, // anonymous object used for default
-                new {year = @"\d{4}", month = @"\d{2}" // anon object for setting constraints on url params
-            );
+            routes.MapMvcAttributeRoutes(); // method enables attribute routing rather than convention-based routing
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            //Convention-based routing
+            //routes.MapRoute(
+            //    "MoviesByReleaseDate", // name of route
+            //    "movies/released/{year}/{month}", // url pattern
+            //    new {controller = "Movies", action = "ByReleaseDate"}, // anonymous object used for default
+            //    new {year = @"\d{4}", month = @"\d{2}" // anon object for setting constraints on url params
+            //);
+
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
         }
     }
 }
