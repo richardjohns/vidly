@@ -19,6 +19,14 @@ namespace Vidly.Controllers
             var isMono = Type.GetType("Mono.Runtime") != null;
 
             var movie = new Movie() { Name = "Shrek!" };
+
+            var movies = new List<Movie>
+            {
+                new Movie { Name = "Shrek!"},
+                new Movie { Name = "Wall-e"}
+            };
+
+
             var customers = new List<Customer>
             {
                 new Customer { Name = "Customer 1" },
