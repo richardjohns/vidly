@@ -15,9 +15,6 @@ namespace Vidly.Controllers
         // GET: Movies/Random
         public ActionResult Random() // was Index() to get it to work before
         {
-            var mvcName = typeof(Controller).Assembly.GetName();
-            var isMono = Type.GetType("Mono.Runtime") != null;
-
             var movie = new Movie() { Name = "Shrek!" };
 
             var movies = new List<Movie>
@@ -25,7 +22,6 @@ namespace Vidly.Controllers
                 new Movie { Name = "Shrek!"},
                 new Movie { Name = "Wall-e"}
             };
-
 
             var customers = new List<Customer>
             {
