@@ -92,6 +92,7 @@
     <Compile Include="Models\Customer.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Models\MembershipType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
