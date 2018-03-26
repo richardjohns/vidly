@@ -12,30 +12,20 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        // GET: Movies/Random
-        public ActionResult Random() // was Index() to get it to work before
+        public ViewResult Index() // was Index() to get it to work before
         {
-            var movie = new Movie() { Name = "Shrek!" };
+            var movies = GetMovies();
 
-            var movies = new List<Movie>
+            return View(movies);
+        }
+
+        private IEnumerable<Movie> GetMovies()
+        {
+            return new List<Movie>
             {
                 new Movie { Name = "Shrek!"},
                 new Movie { Name = "Wall-e"}
             };
-
-            var customers = new List<Customer>
-            {
-                new Customer { Name = "Customer 1" },
-                new Customer { Name = "Customer 2" }
-            };
-
-            var viewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customers = customers
-            };
-
-            return View(viewModel);
         }
 
         // attribute-based routing
@@ -47,3 +37,27 @@ namespace Vidly.Controllers
         }
     }
 }
+
+//// GET: Movies/Random
+//public ActionResult Random() // was Index() to get it to work before
+//{
+//    var movies = new List<Movie>
+//            {
+//                new Movie { Name = "Shrek!"},
+//                new Movie { Name = "Wall-e"}
+//            };
+
+//    var customers = new List<Customer>
+//            {
+//                new Customer { Name = "Customer 1" },
+//                new Customer { Name = "Customer 2" }
+//            };
+
+//    var viewModel = new RandomMovieViewModel
+//    {
+//        Movie = movie,
+//        Customers = customers
+//    };
+
+//    return View(viewModel);
+//}
