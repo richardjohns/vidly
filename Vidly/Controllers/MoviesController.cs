@@ -23,8 +23,8 @@ namespace Vidly.Controllers
         {
             return new List<Movie>
             {
-                new Movie { Name = "Shrek!"},
-                new Movie { Name = "Wall-e"}
+                new Movie { Name = "Wall-e", Genre = "Family"},
+                new Movie { Name = "Shrek!", Genre = "Family", ReleaseDate = new DateTime(2008,12,25), DateAdded = new DateTime(2008,12,25), NumberInStock = 5 }
             };
         }
 
