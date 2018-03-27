@@ -8,6 +8,7 @@ namespace Vidly.Models
         public string Name { get; set; }
         public bool IsSubscribedToNewsletter { get; set; }
         public MembershipType MembershipType { get; set; }
+        public string MembershipTypeStr { get; set; }
         public byte MembershipTypeId { get; set; } // treated as foreig key.
     }
 };

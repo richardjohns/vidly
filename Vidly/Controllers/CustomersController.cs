@@ -30,8 +30,8 @@ namespace Vidly.Controllers
         {
             return new List<Customer>
             {
-                new Customer { Id = 1, Name = "John Smith" },
-                new Customer { Id = 2, Name = "Mary Williams" }
+                new Customer { Id = 1, Name = "John Smith", MembershipTypeStr = "Pay as You Go" },
+                new Customer { Id = 2, Name = "Mary Williams", MembershipTypeStr = "Monthly" }
             };
         }
     }
