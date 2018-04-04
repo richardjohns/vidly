@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,19 +13,24 @@ namespace Vidly.Controllers
         public ViewResult Index()
         {
             var customers = GetCustomers();
+            System.Diagnostics.Debug.WriteLine(customers);
 
             return View(customers);
         }
 
         public ActionResult Details(int id)
         {
-            var customer = GetCustomers().SingleOrDefault(c => c.Id == id);
+            //var customers = GetCustomers().SingleOrDefault(c => c.Id == id);
+            var customers = GetCustomers();
+            var customer = customers.ElementAt(id);
+            System.Diagnostics.Debug.WriteLine(customer);
+
 
             if (customer == null)
                 return HttpNotFound();
 
             return View(customer);
-        }
+        } 
 
         public ActionResult New()
         {

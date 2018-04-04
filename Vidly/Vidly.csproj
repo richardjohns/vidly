@@ -79,6 +79,7 @@
     <Folder Include="Views\Movies\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Views\Customers\" />
+    <Folder Include="Controllers\API\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
